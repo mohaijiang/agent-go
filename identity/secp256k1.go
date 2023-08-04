@@ -52,12 +52,12 @@ func NewSecp256k1Identity(privateKey *secp256k1.PrivateKey) (*Secp256k1Identity,
 }
 
 func NewSecp256k1IdentityFromPEM(data []byte) (*Secp256k1Identity, error) {
-	blockParams, remainder := pem.Decode(data)
-	if blockParams.Type != "EC PARAMETERS" {
-		return nil, fmt.Errorf("invalid pem parameters")
-	}
-	block, _ := pem.Decode(remainder)
-	if blockParams.Type != "EC PARAMETERS" {
+	//blockParams, remainder := pem.Decode(data)
+	//if blockParams.Type != "EC PARAMETERS" {
+	//	return nil, fmt.Errorf("invalid pem parameters")
+	//}
+	block, _ := pem.Decode(data)
+	if block.Type != "EC PRIVATE KEY" {
 		return nil, fmt.Errorf("invalid pem file")
 	}
 	var ecPrivateKey ecPrivateKey
@@ -94,32 +94,26 @@ func (id Secp256k1Identity) Sign(msg []byte) []byte {
 }
 
 func (id Secp256k1Identity) ToPEM() ([]byte, error) {
-	der1, err := asn1.Marshal(secp256k1OID)
-	if err != nil {
-		return nil, err
-	}
-	point := id.publicKey.ToECDSA()
+	//der1, err := asn1.Marshal(secp256k1OID)
+	//if err != nil {
+	//	return nil, err
+	//}
+	//point := id.publicKey.ToECDSA()
 	der2, err := asn1.Marshal(ecPrivateKey{
 		Version:       1,
 		PrivateKey:    id.privateKey.D.Bytes(),
 		NamedCurveOID: secp256k1OID,
 		PublicKey: asn1.BitString{
-			Bytes: elliptic.Marshal(secp256k1.S256(), point.X, point.Y),
+			Bytes: elliptic.Marshal(secp256k1.S256(), id.privateKey.X, id.privateKey.Y),
 		},
 	})
 	if err != nil {
 		return nil, err
 	}
-	return append(
-		pem.EncodeToMemory(&pem.Block{
-			Type:  "EC PARAMETERS",
-			Bytes: der1,
-		}),
-		pem.EncodeToMemory(&pem.Block{
-			Type:  "EC PRIVATE KEY",
-			Bytes: der2,
-		})...,
-	), nil
+	return pem.EncodeToMemory(&pem.Block{
+		Type:  "EC PRIVATE KEY",
+		Bytes: der2,
+	}), nil
 }
 
 type ecPrivateKey struct {
