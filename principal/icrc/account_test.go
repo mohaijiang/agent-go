@@ -3,8 +3,8 @@ package icrc_test
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/aviate-labs/agent-go/principal"
-	"github.com/aviate-labs/agent-go/principal/icrc"
+	"github.com/mohaijiang/agent-go/principal"
+	"github.com/mohaijiang/agent-go/principal/icrc"
 	"testing"
 )
 

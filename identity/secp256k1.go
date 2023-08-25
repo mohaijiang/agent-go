@@ -7,8 +7,8 @@ import (
 	"encoding/pem"
 	"errors"
 	"fmt"
-	"github.com/aviate-labs/agent-go/principal"
 	"github.com/aviate-labs/secp256k1"
+	"github.com/mohaijiang/agent-go/principal"
 	"golang.org/x/exp/slices"
 )
 

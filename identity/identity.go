@@ -1,6 +1,6 @@
 package identity
 
-import "github.com/aviate-labs/agent-go/principal"
+import "github.com/mohaijiang/agent-go/principal"
 
 // Identity is an identity that can sign messages.
 type Identity interface {

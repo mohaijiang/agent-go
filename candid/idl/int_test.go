@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/aviate-labs/agent-go/candid/idl"
+	"github.com/mohaijiang/agent-go/candid/idl"
 )
 
 func ExampleInt() {

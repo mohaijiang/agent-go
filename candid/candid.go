@@ -2,15 +2,16 @@ package candid
 
 import (
 	"fmt"
+	"github.com/mohaijiang/agent-go/candid/internal/candid"
+	"github.com/mohaijiang/agent-go/candid/internal/candidvalue"
 	"strings"
 
-	"github.com/aviate-labs/agent-go/candid/did"
-	"github.com/aviate-labs/agent-go/candid/idl"
-	"github.com/aviate-labs/agent-go/candid/internal/candid"
-	"github.com/aviate-labs/agent-go/candid/internal/candidvalue"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go/candid/did"
+	"github.com/mohaijiang/agent-go/candid/idl"
+
 	"github.com/di-wu/parser"
 	"github.com/di-wu/parser/ast"
+	"github.com/mohaijiang/agent-go/principal"
 )
 
 // DecodeValueString decodes the given value into a candid string.

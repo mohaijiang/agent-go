@@ -3,9 +3,9 @@ package mock_test
 import (
 	"bytes"
 	"fmt"
-	"github.com/aviate-labs/agent-go"
-	"github.com/aviate-labs/agent-go/mock"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go"
+	"github.com/mohaijiang/agent-go/mock"
+	"github.com/mohaijiang/agent-go/principal"
 	"net/http/httptest"
 	"net/url"
 	"testing"

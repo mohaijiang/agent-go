@@ -2,7 +2,7 @@ package agent
 
 import (
 	"fmt"
-	"github.com/aviate-labs/agent-go/identity"
+	"github.com/mohaijiang/agent-go/identity"
 	"os"
 	"testing"
 )

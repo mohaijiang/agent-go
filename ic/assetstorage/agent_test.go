@@ -2,15 +2,15 @@
 package assetstorage_test
 
 import (
-	"github.com/aviate-labs/agent-go"
-	"github.com/aviate-labs/agent-go/candid/idl"
-	"github.com/aviate-labs/agent-go/mock"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go"
+	"github.com/mohaijiang/agent-go/candid/idl"
+	"github.com/mohaijiang/agent-go/mock"
+	"github.com/mohaijiang/agent-go/principal"
 	"net/http/httptest"
 	"net/url"
 	"testing"
 
-	"github.com/aviate-labs/agent-go/ic/assetstorage"
+	"github.com/mohaijiang/agent-go/ic/assetstorage"
 )
 
 // Test_ApiVersion tests the "api_version" method on the "assetstorage" canister.

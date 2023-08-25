@@ -2,7 +2,7 @@ package principal_test
 
 import (
 	"fmt"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go/principal"
 	"testing"
 )
 

@@ -8,6 +8,8 @@ github.com/fxamacker/cbor/v2 v2.4.0 h1:ri0ArlOR+5XunOP8CRUowT0pSJOwhW098ZCUyskZD
 github.com/fxamacker/cbor/v2 v2.4.0/go.mod h1:TA1xS00nchWmaBnEIxPSE5oHLuJBAVvqrtAnWBwBCVo=
 github.com/herumi/bls-go-binary v1.28.2 h1:F0AezsC0M1a9aZjk7g0l2hMb1F56Xtpfku97pDndNZE=
 github.com/herumi/bls-go-binary v1.28.2/go.mod h1:O4Vp1AfR4raRGwFeQpr9X/PQtncEicMoOe6BQt1oX0Y=
+github.com/mohaijiang/agent-go v0.0.0-20230608125512-0641394940f2 h1:2p/idOra4mC8JbHUj+98NU/HnBGTar4rhO1KuMWkrCA=
+github.com/mohaijiang/agent-go v0.0.0-20230608125512-0641394940f2/go.mod h1:fy9UekeyeJEq17Cj01Snq23B4HqVyar03wu3uk1eL9U=
 github.com/x448/float16 v0.8.4 h1:qLwI1I70+NjRFUR3zs1JPUCgaCXSh3SW62uAKT1mSBM=
 github.com/x448/float16 v0.8.4/go.mod h1:14CWIYCyZA/cWjXOioeEpHeN/83MdbZDRQHoFcYsOfg=
 golang.org/x/exp v0.0.0-20230515195305-f3d0a9c9a5cc h1:mCRnTeVUjcrhlRmO0VK8a6k6Rrf6TF9htwo2pJVSjIU=

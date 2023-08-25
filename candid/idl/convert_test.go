@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/aviate-labs/agent-go/candid/idl"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go/candid/idl"
+	"github.com/mohaijiang/agent-go/principal"
 )
 
 func ExampleTypeOf() {

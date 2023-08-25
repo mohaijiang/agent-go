@@ -3,8 +3,8 @@ package did
 import (
 	"strings"
 
-	"github.com/aviate-labs/agent-go/candid/internal/candid"
 	"github.com/di-wu/parser/ast"
+	"github.com/mohaijiang/agent-go/candid/internal/candid"
 )
 
 // Description represents the interface description of a program. An interface description consists of a sequence of

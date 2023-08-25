@@ -1,6 +1,6 @@
 package ic
 
-import "github.com/aviate-labs/agent-go/principal"
+import "github.com/mohaijiang/agent-go/principal"
 
 var (
 	// https://dashboard.internetcomputer.org/canister/rwlgt-iiaaa-aaaaa-aaaaa-cai

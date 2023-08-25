@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	cert "github.com/aviate-labs/agent-go/certificate"
+	cert "github.com/mohaijiang/agent-go/certificate"
 )
 
 var pruned = cert.Fork{

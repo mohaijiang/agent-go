@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/aviate-labs/agent-go"
+	"github.com/mohaijiang/agent-go"
 )
 
 // var ic0, _ = url.Parse("https://ic0.app/")

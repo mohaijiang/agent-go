@@ -1,14 +1,16 @@
 package candid_test
 
 import (
+	"bufio"
 	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"math/big"
 	"os"
 	"testing"
 
-	"github.com/aviate-labs/agent-go/candid"
-	"github.com/aviate-labs/agent-go/candid/idl"
+	"github.com/mohaijiang/agent-go/candid"
+	"github.com/mohaijiang/agent-go/candid/idl"
 )
 
 func ExampleEncodeValueString() {
@@ -26,13 +28,21 @@ func ExampleEncodeValueString_blob() {
 }
 
 func ExampleParseDID() {
-	raw, _ := os.ReadFile("testdata/counter.did")
+	raw, _ := os.ReadFile("testdata/life.did")
 	p, _ := candid.ParseDID(raw)
 	fmt.Println(p)
 	// Output:
 	// service : {
-	//   inc : () -> nat;
+	//   current : () -> text query;
+	//   next : () -> text;
 	// }
+}
+
+func TestParseDID2(t *testing.T) {
+	raw, _ := os.ReadFile("testdata/simple_to_do.did")
+	p, _ := candid.ParseDID(raw)
+	str, _ := json.Marshal(p)
+	fmt.Println("str:", string(str))
 }
 
 func TestDecodeValue(t *testing.T) {
@@ -168,8 +178,76 @@ func TestEncodeValue(t *testing.T) {
 }
 
 func TestParseDID(t *testing.T) {
-	raw, _ := os.ReadFile("internal/candid/testdata/ic.did")
-	if _, err := candid.ParseDID(raw); err != nil {
-		t.Error(err)
+	raw, _ := os.ReadFile("testdata/simple_to_do.did")
+	discription, err := candid.ParseDID(raw)
+	if err != nil {
+		t.Fatal(err)
 	}
+
+	str, _ := json.MarshalIndent(discription, "", "  ")
+
+	fmt.Println(string(str))
+}
+
+func TestParseEchoDID(t *testing.T) {
+	raw, _ := os.ReadFile("testdata/basic_dao.did")
+	discription, err := candid.ParseDID(raw)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	str, _ := json.MarshalIndent(discription, "", "  ")
+
+	fmt.Println(string(str))
+}
+
+func TestEchoDID2(t *testing.T) {
+	raw := []byte(getData())
+	discription, err := candid.ParseDID(raw)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	str, _ := json.MarshalIndent(discription, "", "  ")
+
+	fmt.Println(string(str))
+}
+
+func getData() string {
+	// 打开输入文件进行读取
+	inputFile, err := os.Open("/Users/mohaijiang/tmp/examples/motoko/simple-to-do/.dfx/local/canisters/simple_to_do/simple_to_do.did")
+	if err != nil {
+		fmt.Println("Error opening input file:", err)
+		return ""
+	}
+	defer inputFile.Close()
+
+	// 打开输出文件进行写入
+	var convertedContent string
+
+	scanner := bufio.NewScanner(inputFile)
+	var currentLine string
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		currentLine += line
+		// 写入当前行
+		convertedContent += currentLine
+		currentLine = ""
+	}
+
+	// 写入最后一行
+	if currentLine != "" {
+		convertedContent += currentLine
+	}
+
+	if scanner.Err() != nil {
+		fmt.Println("Error reading input file:", scanner.Err())
+		return ""
+	}
+
+	fmt.Println("File formatting completed.")
+	fmt.Println(convertedContent)
+
+	return convertedContent
 }

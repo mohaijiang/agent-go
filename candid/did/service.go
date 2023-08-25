@@ -2,21 +2,23 @@ package did
 
 import (
 	"fmt"
+	"strings"
 
-	"github.com/aviate-labs/agent-go/candid/internal/candid"
 	"github.com/di-wu/parser/ast"
+	"github.com/mohaijiang/agent-go/candid/internal/candid"
 )
 
 // Method is a public method of a service.
 type Method struct {
 	// Name describes the method.
 	Name string
-
 	// Func is a function type describing its signature.
 	Func *Func
 	// ID is a reference to a type definition naming a function reference type.
 	// It is NOT possible to have both a function type and a reference.
 	ID *string
+	// Description
+	Description string
 }
 
 func (m Method) String() string {
@@ -63,20 +65,23 @@ func convertService(n *ast.Node) Service {
 			actor.MethodId = &id
 		case candid.TupTypeT:
 		case candid.ActorTypeT:
+			nextFunctionDescription := ""
 			for _, n := range n.Children() {
 				if n.Type == candid.CommentTextT {
+					nextFunctionDescription += strings.TrimSpace(n.Value)
 					continue
 				}
 
-				name := n.FirstChild.Value
+				name := removeOuterQuotes(n.FirstChild.Value)
 				switch n := n.LastChild; n.Type {
 				case candid.FuncTypeT:
 					f := convertFunc(n)
 					actor.Methods = append(
 						actor.Methods,
 						Method{
-							Name: name,
-							Func: &f,
+							Name:        name,
+							Func:        &f,
+							Description: nextFunctionDescription,
 						},
 					)
 				case candid.IdT, candid.TextT:
@@ -91,7 +96,34 @@ func convertService(n *ast.Node) Service {
 				default:
 					panic(n)
 				}
+				nextFunctionDescription = ""
 			}
+		case candid.MethTypeT:
+
+			fmt.Println(n)
+			var id string
+			var f Func
+			for _, c := range n.Children() {
+				fmt.Println(c)
+				switch c.Type {
+				case candid.IdT:
+					id = c.Value
+				case candid.FuncTypeT:
+
+					fmt.Println(c)
+					f = convertFunc(c)
+				}
+
+			}
+			actor.Methods = append(
+				actor.Methods,
+				Method{
+					ID:   &id,
+					Name: id,
+					Func: &f,
+				},
+			)
+
 		default:
 			panic(n)
 		}
@@ -113,4 +145,17 @@ func (a Service) String() string {
 		s += fmt.Sprintf("  %s;\n", m.String())
 	}
 	return s + "}"
+}
+
+func removeOuterQuotes(input string) string {
+	// 去除首尾的空白字符
+	input = strings.TrimSpace(input)
+
+	// 检查字符串长度是否足够包含至少两个引号
+	if len(input) >= 2 && input[0] == '"' && input[len(input)-1] == '"' {
+		// 去除外围的引号
+		return input[1 : len(input)-1]
+	}
+
+	return input
 }

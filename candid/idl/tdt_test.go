@@ -6,11 +6,11 @@ import (
 	"os"
 	"testing"
 
-	"github.com/aviate-labs/agent-go/candid/idl"
-	"github.com/aviate-labs/agent-go/candid/internal/blob"
-	"github.com/aviate-labs/agent-go/candid/internal/candidtest"
 	"github.com/di-wu/parser"
 	"github.com/di-wu/parser/ast"
+	"github.com/mohaijiang/agent-go/candid/idl"
+	"github.com/mohaijiang/agent-go/candid/internal/blob"
+	"github.com/mohaijiang/agent-go/candid/internal/candidtest"
 )
 
 func TestTypeDefinitionTable(t *testing.T) {

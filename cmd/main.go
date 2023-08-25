@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/aviate-labs/agent-go"
-	"github.com/aviate-labs/agent-go/cmd/internal/cmd"
-	"github.com/aviate-labs/agent-go/gen"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go"
+	"github.com/mohaijiang/agent-go/cmd/internal/cmd"
+	"github.com/mohaijiang/agent-go/gen"
+	"github.com/mohaijiang/agent-go/principal"
 	"os"
 )
 

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/aviate-labs/agent-go"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go"
+	"github.com/mohaijiang/agent-go/principal"
 )
 
 func TestNewRequestID(t *testing.T) {

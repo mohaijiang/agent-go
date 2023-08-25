@@ -1,8 +1,9 @@
-module github.com/aviate-labs/agent-go
+module github.com/mohaijiang/agent-go
 
 go 1.20
 
 require (
+	github.com/aviate-labs/agent-go v0.2.0
 	github.com/aviate-labs/leb128 v0.3.0
 	github.com/aviate-labs/secp256k1 v0.0.0-5e6736a
 	github.com/di-wu/parser v0.3.0
@@ -12,3 +13,4 @@ require (
 )
 
 require github.com/x448/float16 v0.8.4 // indirect
+

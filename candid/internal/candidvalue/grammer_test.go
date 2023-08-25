@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/aviate-labs/agent-go/candid/internal/candidvalue"
 	"github.com/di-wu/parser"
 	"github.com/di-wu/parser/ast"
+	"github.com/mohaijiang/agent-go/candid/internal/candidvalue"
 )
 
 func TestValues(t *testing.T) {

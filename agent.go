@@ -7,12 +7,12 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/aviate-labs/agent-go/candid"
-	"github.com/aviate-labs/agent-go/candid/idl"
-	"github.com/aviate-labs/agent-go/certificate"
-	"github.com/aviate-labs/agent-go/identity"
-	"github.com/aviate-labs/agent-go/principal"
 	"github.com/fxamacker/cbor/v2"
+	"github.com/mohaijiang/agent-go/candid"
+	"github.com/mohaijiang/agent-go/candid/idl"
+	"github.com/mohaijiang/agent-go/certificate"
+	"github.com/mohaijiang/agent-go/identity"
+	"github.com/mohaijiang/agent-go/principal"
 )
 
 // ic0 is the old (default) host for the Internet Computer.

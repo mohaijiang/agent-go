@@ -6,10 +6,10 @@ import (
 	"math/big"
 	"sort"
 
-	"github.com/aviate-labs/agent-go/identity"
-	"github.com/aviate-labs/agent-go/principal"
 	"github.com/aviate-labs/leb128"
 	"github.com/fxamacker/cbor/v2"
+	"github.com/mohaijiang/agent-go/identity"
+	"github.com/mohaijiang/agent-go/principal"
 )
 
 var (

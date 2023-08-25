@@ -3,7 +3,7 @@ package certificate_test
 import (
 	"fmt"
 
-	"github.com/aviate-labs/agent-go/certificate"
+	"github.com/mohaijiang/agent-go/certificate"
 )
 
 func ExampleLookup() {

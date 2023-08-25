@@ -2,9 +2,9 @@ package certificate
 
 import (
 	"fmt"
-	"github.com/aviate-labs/agent-go/certificate/bls"
-	"github.com/aviate-labs/agent-go/principal"
 	"github.com/fxamacker/cbor/v2"
+	"github.com/mohaijiang/agent-go/certificate/bls"
+	"github.com/mohaijiang/agent-go/principal"
 	"golang.org/x/exp/slices"
 )
 

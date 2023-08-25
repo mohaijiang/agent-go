@@ -3,9 +3,9 @@
 package wallet
 
 import (
-	"github.com/aviate-labs/agent-go"
-	"github.com/aviate-labs/agent-go/candid/idl"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go"
+	"github.com/mohaijiang/agent-go/candid/idl"
+	"github.com/mohaijiang/agent-go/principal"
 )
 
 // Agent is a client for the "wallet" canister.

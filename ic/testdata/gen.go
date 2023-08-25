@@ -3,7 +3,7 @@ package main
 import (
 	"embed"
 	"fmt"
-	"github.com/aviate-labs/agent-go/gen"
+	"github.com/mohaijiang/agent-go/gen"
 	"log"
 	"os"
 	"strings"
@@ -52,7 +52,7 @@ func main() {
 			}
 			{
 				g, err := gen.NewGenerator("", name, name, did)
-				g.ModulePath = "github.com/aviate-labs/agent-go/ic"
+				g.ModulePath = "github.com/mohaijiang/agent-go/ic"
 				if err != nil {
 					log.Panic(err)
 				}

@@ -2,15 +2,15 @@
 package icpledger_test
 
 import (
-	"github.com/aviate-labs/agent-go"
+	"github.com/mohaijiang/agent-go"
 
-	"github.com/aviate-labs/agent-go/mock"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go/mock"
+	"github.com/mohaijiang/agent-go/principal"
 	"net/http/httptest"
 	"net/url"
 	"testing"
 
-	"github.com/aviate-labs/agent-go/ic/icpledger"
+	"github.com/mohaijiang/agent-go/ic/icpledger"
 )
 
 // Test_AccountBalance tests the "account_balance" method on the "icpledger" canister.

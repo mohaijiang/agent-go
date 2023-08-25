@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/aviate-labs/agent-go/principal"
 	"github.com/fxamacker/cbor/v2"
+	"github.com/mohaijiang/agent-go/principal"
 )
 
 // Client is a client for the IC agent.

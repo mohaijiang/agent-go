@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go/principal"
 )
 
 func ExampleDecode() {

@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/aviate-labs/agent-go/candid/internal/candid"
 	"github.com/di-wu/parser"
 	"github.com/di-wu/parser/ast"
+	"github.com/mohaijiang/agent-go/candid/internal/candid"
 )
 
 //go:embed testdata

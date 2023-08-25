@@ -2,8 +2,8 @@ package certificate_test
 
 import (
 	"encoding/hex"
-	"github.com/aviate-labs/agent-go/certificate"
-	"github.com/aviate-labs/agent-go/principal"
+	"github.com/mohaijiang/agent-go/certificate"
+	"github.com/mohaijiang/agent-go/principal"
 	"testing"
 )
 

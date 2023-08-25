@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/aviate-labs/agent-go/candid/idl"
-	"github.com/aviate-labs/agent-go/candid/internal/candidvalue"
 	"github.com/di-wu/parser/ast"
+	"github.com/mohaijiang/agent-go/candid/idl"
+	"github.com/mohaijiang/agent-go/candid/internal/candidvalue"
 )
 
 func ConvertValues(n *ast.Node) ([]idl.Type, []any, error) {
